@@ -1,0 +1,52 @@
+baseurl = "/"
+languageCode = "en-us"
+title = "Swimming the Data Lake"
+theme = "modified-hugo-xmin"
+googleAnalytics = ""
+disqusShortname = ""
+ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
+footnotereturnlinkcontents = "↩"
+
+[permalinks]
+    post = "/post/:year/:month/:day/:slug/"
+    note = "/note/:year/:month/:day/:slug/"
+
+[[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+[[menu.main]]
+    name = "Categories"
+    url = "/categories/"
+    weight = 3
+[[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 4
+[[menu.main]]
+    name = "Subscribe"
+    url = "/index.xml"
+[[menu.main]]
+    name = "GitHub"
+    url = "https://github.com/verajosemanuel"
+    weight = 5
+[[menu.main]]
+    name = "CV"
+    url = "/vitae/"
+    weight = 6
+[[menu.main]]
+    name = "Twitter"
+    url = "https://twitter.com/verajosemanuel"
+    weight = 7
+
+[params]
+    description = "Hints and discoveries on my path to knowledge."
+    footer = "&copy; [jvera](https://jvera.name) 2017 | [Github](https://github.com/verajosemanuel) | [Twitter](https://twitter.com/verajosemanuel)"
+    
+[params.logo]
+    url = "logo.png"
+    alt = "swim the data lake"
