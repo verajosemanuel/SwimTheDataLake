@@ -6,5 +6,5 @@ title: Home
 
 # SWIMMING THE DATA LAKE
 
-## _Hints on my path to knowledge_
+## _Hints & Discoveries from my path to knowledge_
 
