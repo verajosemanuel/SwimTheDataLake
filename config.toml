@@ -30,22 +30,10 @@ footnotereturnlinkcontents = "↩"
 [[menu.main]]
     name = "Subscribe"
     url = "/index.xml"
-[[menu.main]]
-    name = "GitHub"
-    url = "https://github.com/verajosemanuel"
-    weight = 5
-[[menu.main]]
-    name = "CV"
-    url = "/vitae/"
-    weight = 6
-[[menu.main]]
-    name = "Twitter"
-    url = "https://twitter.com/verajosemanuel"
-    weight = 7
 
 [params]
     description = "Hints and discoveries on my path to knowledge."
-    footer = "&copy; [jvera](https://jvera.name) 2017 | [Github](https://github.com/verajosemanuel) | [Twitter](https://twitter.com/verajosemanuel)"
+    footer = "&copy; [jvera](https://jvera.name) 2017 | [Github](https://github.com/verajosemanuel) | [Twitter](https://twitter.com/verajosemanuel) | [Linkedin] (http://linkedin.com/in/jose-manuel-vera-813759b) | [CV](/vitae/)"
     
 [params.logo]
     url = "logo.png"
