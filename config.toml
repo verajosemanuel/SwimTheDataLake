@@ -33,7 +33,7 @@ footnotereturnlinkcontents = "↩"
 
 [params]
     description = "Hints and discoveries on my path to knowledge."
-    footer = "&copy; [jvera](https://jvera.name) 2017 | [Github](https://github.com/verajosemanuel) | [Twitter](https://twitter.com/verajosemanuel) | [Linkedin] (http://linkedin.com/in/jose-manuel-vera-813759b) | [CV](/vitae/)"
+    footer = "&copy; [jvera](https://jvera.name) 2017 | [Github](https://github.com/verajosemanuel) | [Twitter](https://twitter.com/verajosemanuel) | [Linkedin] (http://linkedin.com/in/jose-manuel-vera-813759b) | [CV](/vitae/) | [R-bloggers feed](http://feeds.feedburner.com/RBloggers)"
     
 [params.logo]
     url = "logo.png"
