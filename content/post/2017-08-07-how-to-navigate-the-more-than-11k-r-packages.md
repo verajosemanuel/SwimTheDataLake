@@ -13,7 +13,7 @@ There’s a lot of sites to search for help if you need a hand when programming 
 
 [Rdrr.io](https://rdrr.io/): More than 3.000 online pre-loaded packages for our snippets to test. A complete search engine, and Jupyter Notebooks for our pleasure.
 
-[Rdocumentation](https://www.rdocumentation.org/), one of my favourites. Serching CRAN, Bioconductor and GitHub for descriptions, words, functions or packages that can be very useful on our daily work. Available as R package for you to install on Studio, so you can search from within Rstudio Help tab. No need to open the browser.
+[Rdocumentation](https://www.rdocumentation.org/), one of my favourites. Serching CRAN, Bioconductor and GitHub for descriptions, words, functions or packages that can be very useful on our daily work. Available as R package for you to install on RStudio, so you can search from within Rstudio Help tab. No need to open the browser.
 
 [Rseek](https://www.rdocumentation.org/), by Shasha Goodman, based on Google engine, with some useful tabs for books, support forums, packages, docs…and even a “beginner” section. Very useful but sometimes slow.
 
