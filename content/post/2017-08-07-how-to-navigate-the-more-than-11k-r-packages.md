@@ -17,11 +17,11 @@ There’s a lot of sites to search for help if you need a hand when programming 
 
 [Rseek](https://www.rdocumentation.org/), by Shasha Goodman, based on Google engine, with some useful tabs for books, support forums, packages, docs…and even a “beginner” section. Very useful but sometimes slow.
 
-[CRAN Task Views](https://cran.r-project.org/web/views/) is the official index for all CRAN packages, grouped by Topics (Tasks). They have an `[ndex by name](https://cran.r-project.org/web/packages/available_packages_by_name.html) very useful too. But not too useful if you don’t know the name of the package you’re searching for. Good when need guidance working on specific tasks.
+[CRAN Task Views](https://cran.r-project.org/web/views/) is the official index for all CRAN packages, grouped by Topics (Tasks). They have an [Index by Name](https://cran.r-project.org/web/packages/available_packages_by_name.html) very complete too. But not too useful if you don’t know the name of the package you’re searching for. Good when need guidance working on specific tasks.
 
 You can get a glimpse of most popular and donwloaded packages with [CRAN downloads log](http://cran-logs.rstudio.com/) . Using *cranlogs* package you can have this info right into your code.
 
-[MetaCran](https://www.r-pkg.org/), one of the most popular websites. Search by author, popularity, downloads, trending….seems to be based on download logs as they are authors of cranlogs package.
+[MetaCran](https://www.r-pkg.org/), one of the most popular websites. Search by author, popularity, downloads, trending….seems to be based on download logs as they are authors of *cranlogs* package.
 
 [Awesome R](https://awesome-r.com/), CRAN Task Views style, but nicer, linking to tools and packages by sections as an index: IDEs, sintax, data manipulation, graphics….
 
@@ -45,4 +45,4 @@ Dirk Eddelbuettel is the maintainer of [CRANberries](http://dirk.eddelbuettel.co
 
 And last, but not least, the [sos](https://cran.r-project.org/web/packages/sos/index.html) package. Implementing the *findFn()* function, so you can use it in your R code for searching not only on installed packages but in all available packages in CRAN and Bioconductor. No need to get out your favorite IDE.
 
-Feel free to share your favourite help sites via twitter.
+Feel free to share your favourite help sites to my twitter account.
