@@ -10,7 +10,7 @@ tags:
   - dplyr
   - data wrangling
 ---
-Sometimes you'd need to calculate date diffs from a vector or a data frame. It's very easy and I'll show you three different methods. Using dplyr and pipes, easy peasy!
+Sometimes you'd need to calculate rolling date diffs from a vector or a data frame. It's very easy and I'll show you three different methods. Using dplyr and pipes, easy peasy!
 
 Take into account that lubridate has three classes or different ways, to define time spans.
 
