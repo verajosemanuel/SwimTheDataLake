@@ -40,7 +40,7 @@ df <- data.frame(event = event, dummy.var = dummy.var, event.date = event.date) 
   mutate(tae.2 = difftime(event.date , lag(event.date, 1))) %>%
   mutate(tae.3 = as.duration(event.date %--% lag(event.date, 1))) %>% 
   mutate(tae.4 = tae.3 / ddays(1))
-```
+
 
     event dummy.var event.date date.before    tae.1    tae.2                    tae.3 tae.4
    <fctr>     <int>     <date>      <date>   <time>   <time>           <S4: Duration> <dbl>
@@ -56,3 +56,4 @@ df <- data.frame(event = event, dummy.var = dummy.var, event.date = event.date) 
 10      d         4 2016-05-03        <NA>  NA days  NA days                     <NA>    NA
 11      d         8 2016-07-17  2016-05-03  75 days  75 days  6480000s (~10.71 weeks)   -75
 12      d        12 2016-12-05  2016-07-17 141 days 141 days 12182400s (~20.14 weeks)  -141
+```
