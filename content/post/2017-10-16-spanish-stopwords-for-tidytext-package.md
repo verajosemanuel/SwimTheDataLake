@@ -16,7 +16,7 @@ So, when you're searching for help, you'll be much successful if searching in en
 
 This issue is best known for all of us that had been working sometimes mining text. As you surely know, for a proper text analytics, text must be stripped of "non informative" tokens. Words like (in spanish): *de, la, que* are not very informative for the common tasks.
 
-So, you started your Rstudio project, loaded tidytext library, and then, when reaching the point where you have to remove thast kind of words with a line like this:
+So, you started your Rstudio project, loaded tidytext library, and then, when reaching the point where you have to remove that kind of words with a line like this:
 
 ```
 df_text <- my_spanish_text %>% 
@@ -53,4 +53,4 @@ df_text <- df_text %>%
 ```
 
 
-et voilà!  All spanish stopwords are out of the corpus and you can follow the next steps for text mining your data.
+et voilà!  All spanish stopwords are out of the corpus and you can go on for the next steps on text mining your data.
