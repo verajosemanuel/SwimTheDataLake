@@ -14,7 +14,7 @@ https://cran.r-project.org/web/packages/pacman/vignettes/Introduction_to_pacman.
 
 With pacman::p_load() instead of 5 lines of code to load 5 common packages, like this:
 
-```
+```R
 library(dplyr)
 library(tidyr)
 library(Hmisc)
@@ -25,13 +25,13 @@ library(janitor)
 
 You can write one line
 
-```
+```r
 pacman::p_load(dplyr, tidyr, Hmisc, janitor, magrittr)
 ```
 
 if the package is not available on the system, it will first install it (through install.packages), and only then try to load it again. Same as library installr
 
-```
+```r
 installr::require2
 ```
 
