@@ -11,7 +11,7 @@ tags:
 
 Mentioned yesterday the useful library _pacman_ , so a brief comment about it is due. But I'm going to recommend _installR_ for managing updates first (packages and R itself).  With a console command, and just for windows users, it's so easy to keep your Rstudio updated.
 
-```
+```r
 install.packages(“installr”)
 library(installr)
 
@@ -27,7 +27,7 @@ I recommend to have a look at the vignette for many useful commands regarding th
 Managing non installed packages that are used on your code is a bit more easily managed with Pacman (yes, THAT pacman)
 
 
-```
+```r
 # installing (traditional way, just for checking pacman library)
 
 if (!require(“pacman”)) install.packages(“pacman”)

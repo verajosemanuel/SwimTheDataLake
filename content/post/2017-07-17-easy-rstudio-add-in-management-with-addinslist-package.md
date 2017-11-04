@@ -10,11 +10,12 @@ tags: []
 
 When started using Rstudio (some time ago) I had been wondering where the Rstudio Addins were located. There’s a menu option, but It was empty on my machine. Seeking an easy way to install some addins I’ve found “addinslist”
 
-```
+```r
 install.packages (“addinslist”)
 ```
 Or using pacman:
-```
+
+```r
 pacman::p_load(addinslist)
 ```
 After installation, a wizard is available for everybody to choose among a lot of add-ins for Rstudio. Some of them extremely useful. You can watch videos of some of them running.

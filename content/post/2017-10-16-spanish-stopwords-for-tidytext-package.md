@@ -18,7 +18,7 @@ This issue is best known for all of us that had been working sometimes mining te
 
 So, you started your Rstudio project, loaded tidytext library, and then, when reaching the point where you have to remove that kind of words with a line like this:
 
-```
+```r
 df_text <- my_spanish_text %>% 
            unnest_tokens(word, text_line) %>%
            anti_join(stop_words)
@@ -35,7 +35,7 @@ http://countwordsfree.com/stopwords/spanish
 
 Or you can add stopwords *borrowing* them from other text mining packages as **quanteda** or **tm**. Install those mentioned packages for the next chunk of code to properly work.
 
-```
+```r
 custom_stop_words <- bind_rows(stop_words,
                                data_frame(word = tm::stopwords("spanish"),
                                           lexicon = "custom"))

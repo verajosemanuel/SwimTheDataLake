@@ -15,7 +15,7 @@ Iris is one of the most used data set in R. We’ve seen it in many formats, and
 
 I was wondering if there’s something new, something never done to it before. Just a couple of clicks and found a way to have an interactive animated 3D chart. Just use the mouse pointer to drag and change perspective and move cube.
 
-```
+```r
 install.packages(“rgl”)
 
 library(rgl)

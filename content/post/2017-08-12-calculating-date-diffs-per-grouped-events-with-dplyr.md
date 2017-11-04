@@ -27,7 +27,7 @@ Take into account that lubridate has three classes or different ways, to define 
   * base difftime
   * lubridate %--% Periods operator
 
-```
+```r
 library(magrittr)
 library(dplyr)
 library(lubridate)

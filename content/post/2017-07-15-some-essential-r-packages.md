@@ -29,7 +29,7 @@ janitor: I love the way it helps, combined with magrittr, the exploratory analys
 
 - rio: Import and export data the easy way. Many different formats with an extremely simple syntax. It is a meta-package actually, that incorporates some of the best in this area.
 
-```
+```r
 if (!require(pacman)) install.packages(“pacman”)
 p_load(“devtools”, “corrplot”, “tidyverse”, “knitr”, “RDocumentation”,
  “janitor”, “rticles”, “data.table”, “formatR”, “ggThemeAssist”, “ggthemes”,

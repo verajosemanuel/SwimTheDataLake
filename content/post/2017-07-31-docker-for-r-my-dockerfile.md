@@ -21,13 +21,13 @@ https://hub.docker.com/r/rocker/hadleyverse/
 
 Just a command to install Docker on linux:
 
-```
+```r
 curl -fsSL https://get.docker.com/ | sh
 ```
 
 Pull the image from repo and start a container:
 
-```
+```r
 docker run -d -p 8787:8787 rocker/hadleyverse
 ```
 
@@ -35,7 +35,7 @@ Connect to port 8787 with your browser (rstudio as user and password) to check i
 
 When container is generated you can start it with:
 
-```
+```r
 docker start mycontainer --interactive /bin/bash
 ```
 
@@ -45,13 +45,13 @@ docker start mycontainer --interactive /bin/bash
 
 List your containers:
 
-```
+```r
 docker ps -a
 ```
 
 Sharing data with host:
 
-```
+```r
 docker start mycontainer --interactive -v ~/dockerdata:/data /bin/bash
 ```
 
@@ -61,19 +61,19 @@ https://hub.docker.com/r/rocker/shiny/
 
 list all your attached volumes command:
 
-```
+```r
 docker volume ls -q
 ```
 
 delete all volumes command:
 
-```
+```r
 docker volume rm $(docker volume ls -q)  
 ```
 
 How to delete a container:
 
-```
+```r
 docker rm mycontainer
 ```
 

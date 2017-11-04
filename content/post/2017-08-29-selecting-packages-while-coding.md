@@ -20,7 +20,7 @@ My usual procedure is to reach RDocumentation website, search for _mode_ functio
 Now, inside your preferred R code editor (hope you're using Rstudio) just use packagemetrics package to get info to compare:
 
 
-```
+```r
 
 library(packagemetrics)
 

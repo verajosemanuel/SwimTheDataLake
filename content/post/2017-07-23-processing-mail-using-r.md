@@ -14,26 +14,26 @@ Some readers suggested tm.plugin.mail added to tm package, but my core feature i
 At the end, good old Bash saved my day.
 It’s a really easy process (but be aware that maybe you’ll end not using R at all): connect to mail account using fetchmail and then use R to read local mailbox.
 From that moment, to the end, it’s the usual text parsing with tm Corpora. Some hints:
-```
+```r
 library(tm)
 library(tm.plugin.mail)
 mbox <- MBoxSource(“/var/spool/mail/user”, encoding = “UTF8”)
 ```
 sometimes it’s very useful to keep a text backup for each mail message.
-```
+```r
 convert_mbox_eml(mbox = “/var/spool/mail/user”, dir = “/home/user/my_mail_text”)
 ```
 or getting Corpora alive right from mailbox
-```
+```r
 mail_messages <- VCorpus(MBoxSource(“/var/spool/mail/user”, encoding = “UTF8”), readerControl = list(reader = readMail))
 ```
 some cleaning
-```
+```r
 mail_messages <- tm_map(mail_messages, removeCitation)
 mail_messages <- tm_map(mail_messages, removeSignature)
 ```
 take a peek at content
-```
+```r
 mail_messages[[1]]$meta$author
 mail_messages[[1]]$meta$heading
 mail_messages[[1]]$meta$header
