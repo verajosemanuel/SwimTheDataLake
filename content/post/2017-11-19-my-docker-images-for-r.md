@@ -27,4 +27,8 @@ I offer three images:
 
 Here, my link to the brand new Docker images.
 
-https://hub.docker.com/u/jvera/
+https://hub.docker.com/r/jvera/tidyviz-base/
+
+https://hub.docker.com/r/jvera/tidyviz/
+
+https://hub.docker.com/r/jvera/tidyviz-shiny/
