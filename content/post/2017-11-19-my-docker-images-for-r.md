@@ -9,7 +9,7 @@ tags:
   - Docker
 ---
 
-This month I reached the dreaded "2 hours limit" at Docker Hub on building my Docker images. The images are built but the message shown is "error". You can still use it, but on the front desk, seems that I'm not doing a good job. Clearly, something to fix.
+This month I reached the dreaded "2 hours limit" at Docker Hub on building my Docker images. The images are built but the message shown is **"build cancelled"**. You can still use it, but on the front desk, seems that I'm not doing a good job. Clearly, something to fix.
 
 So entered a hard refactoring week trying to make my images available again with no error message. 
 My first attempt was to split TidyViz into several images, one for GIS, one for stats and ML, the other for Rmarkdown and reporting...the issue is I ended with a nightmare of unmantainable images with many dependencies not satisfied and as a result, several unusable images.
