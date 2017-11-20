@@ -41,7 +41,7 @@ Et voilà, all your settings are there for any other Atom installation you have.
 
 ```r
 
-syncing-settings:restore
+sync-settings:restore
 
 ```
 
