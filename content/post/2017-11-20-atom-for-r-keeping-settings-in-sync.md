@@ -31,7 +31,7 @@ Here the steps:
 
 6- Open Atom commmand palette (Ctrl + Shift + P) and choose
 
-```
+```r
 
 sync-settings:backup
 
@@ -39,7 +39,7 @@ sync-settings:backup
 
 Et voilà, all your settings are there for any other Atom installation you have. Just install *Sync-Settings* package and choose 
 
-```
+```r
 
 syncing-settings:restore
 
