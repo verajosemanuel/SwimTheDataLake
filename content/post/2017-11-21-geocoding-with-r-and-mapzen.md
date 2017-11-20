@@ -56,3 +56,5 @@ for (address in unique_adresses) {
 final_df <-  inner_join(df, mapzen_df)
 
 ```
+
+And all locations geocoded!
