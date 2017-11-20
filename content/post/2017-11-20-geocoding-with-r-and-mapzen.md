@@ -1,13 +1,14 @@
 ---
 title: Geocoding with R and mapZen
 author: jvera
-date: '2017-11-21'
+date: '2017-11-20'
 slug: geocoding-with-r-and-mapzen
 categories:
   - packages
 tags:
-  - geo
+  - gis
 ---
+
 The most widely used service for Geocoding is Google Maps, but you'd hit the limits early in your project if you don't have a paid account. I often place data on a map, so I need precise geocoding.
 It's not unlikely you had to test some other geocodig options 'til you get the budget for a Google Maps Professional account. I've been in that situation myself a couple of times.
 
@@ -28,7 +29,7 @@ df <- rio::import("locations.xlsx")
 df$complete_address<- paste0(df$address,", France")
 
 mapzen_df <- data.frame()
-
+a
 
 # sometimes you have a lot of repeated adresses
 # so, let's geocode just unique adresses
