@@ -1,7 +1,7 @@
 ---
 title: Geocoding with R and mapZen
 author: jvera
-date: '2017-11-20'
+date: '2017-11-21'
 slug: geocoding-with-r-and-mapzen
 categories:
   - packages
