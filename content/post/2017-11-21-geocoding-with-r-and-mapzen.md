@@ -10,9 +10,9 @@ tags:
 ---
 
 The most widely used service for Geocoding is Google Maps, but you'd hit the limits early in your project if you don't have a paid account. I often place data on a map, so I need precise geocoding.
-It's not unlikely you had to test some other geocodig options 'til you get the budget for a Google Maps Professional account. I've been in that situation myself a couple of times.
+It's not unlikely you had to test some other geocodig options 'til you get the budget for a Google Maps paid account. I've been in that situation myself a couple of times.
 
-Here, I'm going to describe my approach using the free **MapZen.** geocoding service.  We'll use *rmapzen* package but first of all you'll need to get a unique mapzen key for you project (https://mapzen.com/documentation/overview/api-keys/)
+Here, I'm going to describe my approach using the free **MapZen** geocoding service.  We'll use the R package *rmapzen*, available on CRAN, but first of all you'll need to get a unique mapzen key for you project, so go there and create your own: https://mapzen.com/documentation/overview/api-keys/
 
 ```r
 library(mapzen)
@@ -24,15 +24,16 @@ library(magrittr)
 df <- rio::import("locations.xlsx") 
 
 
-# pasted country for better results if it's not in data
+# I recommend to paste country name for better results if it's not in data
 
 df$complete_address<- paste0(df$address,", France")
 
 mapzen_df <- data.frame()
-a
+
 
 # sometimes you have a lot of repeated adresses
 # so, let's geocode just unique adresses
+# MapZen ss free, but don't be rude
 
 unique_adresses <- unique(df$complete_adress)
 
