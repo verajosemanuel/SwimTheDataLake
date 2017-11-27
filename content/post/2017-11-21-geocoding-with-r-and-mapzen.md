@@ -14,6 +14,8 @@ It's not unlikely you had to test some other geocodig options 'til you get the b
 
 Here, I'm going to describe my approach using the free **MapZen** geocoding service.  We'll use the R package *rmapzen*, available on CRAN, but first of all you'll need to get a unique mapzen key for you project, so go there and create your own: https://mapzen.com/documentation/overview/api-keys/
 
+First importing data to geocode. Your source can be different.
+
 ```r
 library(mapzen)
 library(rio)
@@ -22,19 +24,22 @@ library(magrittr)
 # import data to geocode
 
 df <- rio::import("locations.xlsx") 
+```
 
+I recommend to paste country name for better results if it's not in data
 
-# I recommend to paste country name for better results if it's not in data
+```r
 
 df$complete_address<- paste0(df$address,", France")
 
 mapzen_df <- data.frame()
+```
 
+Sometimes you have a lot of repeated adresses so, let's geocode just unique adresses.
+MapZen is free, but don't be rude.
+Then enter te loop to geocode all data.
 
-# sometimes you have a lot of repeated adresses
-# so, let's geocode just unique adresses
-# MapZen is free, but don't be rude
-
+```r
 unique_adresses <- unique(df$complete_adress)
 
 i <- 0
@@ -53,7 +58,12 @@ for (address in unique_adresses) {
   
 }
 
-# join the original df with the geocoded one
+
+```
+
+Join the original df with the geocoded one
+
+```r
 
 final_df <-  inner_join(df, mapzen_df)
 
