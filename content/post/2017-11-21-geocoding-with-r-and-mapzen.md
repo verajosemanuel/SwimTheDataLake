@@ -33,7 +33,7 @@ mapzen_df <- data.frame()
 
 # sometimes you have a lot of repeated adresses
 # so, let's geocode just unique adresses
-# MapZen ss free, but don't be rude
+# MapZen is free, but don't be rude
 
 unique_adresses <- unique(df$complete_adress)
 
