@@ -9,7 +9,7 @@ tags:
   - data wrangling
 ---
 
-![spanish package hex](/images/spanish_logo.png)
+![spanish package hex](/images/logo.png)
 
 Finally, my package was ready for submission on CRAN and now it's published!
 
