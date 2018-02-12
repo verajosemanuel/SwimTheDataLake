@@ -23,7 +23,7 @@ The point is: you'll never be prepared to be a Data Scientist but working on it.
 
 On a personal note, I must say this feeling is an old friend but funnily, it disappeared when I started working on Data Science as it "became" a working title some years ago (at the same time everyone around me started to feel they're frauds).
 
-The reason for this is I started working long time (looooong time) ago with tech teams, mainly on SysOps and Databases, and that time I was the weird addition to the team. Nobody could believe a Psychologist could be so skilled on database maintenance, relational design, and Business Intelligence tools. So back then, I felt sometimes very lonely. I've allways had to struggle and prove my worth. Lucky me, I'm good at it.
+The reason for this is I started working long time (looooong time) ago with tech teams, mainly on SysOps and Databases, and that time I was the weird addition to the team. Nobody could believe a Psychologist could be so skilled on database maintenance, relational design, and Business Intelligence tools. So back then, I felt sometimes very lonely. I've always had to struggle and prove my worth. Lucky me, I'm good at it.
 
 But now, let me say it in plain english: I'm happy as a clam (at high tide).
 
