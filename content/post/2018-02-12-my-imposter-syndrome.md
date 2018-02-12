@@ -9,11 +9,11 @@ tags:
   - work
 ---
 
+![imposter syndrome at work](/images/facepalm.png)
 
-There's a well known issue about the psychology of the majority of people working on Data Science. There's no public study about it to my knowledge but informal guess in meetings and tech talks ended with several (if not all) hands up agreeing with the next sentence:
+There's a well known issue about the psychology of the majority of people working on Data Science. They feel a fraud. There's no public study about it to my knowledge but informal guess in meetings and tech talks ended with several (if not all) hands up agreeing with the next sentence:
 
-"I think that I'm a fraud and don't deserve the success I've achieved."
-
+**"I think that I'm a fraud and don't deserve the success I've achieved."**
 
 For me as a psychologist, it's a very interesting area of investigation and would like to discover some serious study about it, but there's some clear (and guessed) causes for such a feeling. The most obvious is the Data Science field is a very new and hybrid field where the path is not formally stablished, at least as a "work position".
 
@@ -27,6 +27,6 @@ The reason for this is I started working long time (looooong time) ago with tech
 
 But now, let me say it in plain english: I'm happy as a clam (at high tide).
 
-With people coming from different and diverse background, multi-disciplinary teams and many (maaaany) things to learn, these are exciting times for me, feeling comfy for the first time in my life.
+With people coming from different and diverse background, interdisciplinary teams and many (maaaany) things to learn, these are exciting times for me, feeling comfy for the first time in my life.
 
-So, the imposter syndrome? long time forgotten.
+So, where's the imposter syndrome? long time gone.
