@@ -1,0 +1,11 @@
+# Basic .gitattributes for a R repo.
+
+# Source files
+# ============
+*.Rdata  linguist-language=r
+*.rdb    linguist-language=r
+*.rds    linguist-language=r
+*.Rd     linguist-language=r
+*.Rdx    linguist-language=r
+*.Rmd		linguist-language=r
+*.R  		linguist-language=r
