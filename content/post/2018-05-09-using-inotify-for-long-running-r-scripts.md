@@ -20,14 +20,14 @@ I have to assume the user is not going to have the browser opened for hours, som
 
 My first approach was to launch a secondary process using a system call from Flexdashboard R.
 
-```
+```r
 
  system("nohup Rscript api_calls.R 2>&1 &")
 
 ```
 But...how to block any other user from using the same page. Or any other similar process by the way. The answer that came to mind first: lockfile. A very easy POSIX command. So the POSIX way got the top position.
 
-```
+```r
   system("lockfile -r 0 /home/user/my_analysis/web.lock")
 
 ```
@@ -41,7 +41,7 @@ So Let's see how to monitor both mentioned events and circumvent permission issu
 
 To write lockfiles for every user when a new Excel file is uploaded.
 
-```
+```bash
 > sudo incrontab -e
 
 /home/shiny/uploaded_files/ IN_CREATED /scripts/generate_lockfiles.sh
@@ -51,7 +51,7 @@ To write lockfiles for every user when a new Excel file is uploaded.
 Easy to check if any lockfile is present at the beginning of the Flexdashboard page and block any other upload. Be nice to users and show a message explaining why they can't upload a file.
 When the Rscript is started one of the first lines must write a lockfile and delete it at the end when the results file is emailed to user so inotify could unblock the website as follows:
 
-```
+```bash
 /home/R/process_status/ IN_DELETED /scripts/delete_lockfiles.sh
 
 ```
