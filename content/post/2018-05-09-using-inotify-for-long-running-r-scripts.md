@@ -37,7 +37,7 @@ Discarded CRON. Not very eager to check upload folder every few minutes. Not a p
 So *inotify* came to mind as the obvious way to solve it. In case you don't know, inotify is a kernel submodule you can monitor in real time any file event with. Monitoring events like IN_ACCESS, IN_CREATE, IN_DELETE......using a CRON-like interface. You choose what to do and more important, WHEN to do it. 
 Two events are key in my case: uploaded file, and end of API calls.
 
-So easy...but....One more twist. Running Flexdashboard process belongs to "shiny" user, while API calls are running under R user. Other users/apps can use API calls so they must be blocked too. Unix/Linux permissions are built so any given user cannot write/delete any other user's folder.
+So easy...but....One more twist. Running Flexdashboard process belongs to "shiny" user, while API calls are running under R user. Other users/apps can use API calls so they must be blocked too. Unix/Linux permissions are built so any given user cannot write/delete any other user's folder (obviously root can do it all).
 
 So Let's see how to monitor both mentioned events and circumvent permission issues.
 
