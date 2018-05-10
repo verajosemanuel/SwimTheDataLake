@@ -49,7 +49,7 @@ To write lockfiles for every user when a new Excel file is uploaded.
 /home/shiny/uploaded_files/ IN_CREATED /scripts/generate_lockfiles.sh
 
 ```
-
+*generate_lockfiles.sh* contains a bunch of `lockfile` commands as incrontab does not allow more than one command per line.
 Easy to check if any lockfile is present at the beginning of the Flexdashboard page and block any other upload. Be nice to users and show a message explaining why they can't upload a file.
 When the Rscript is started one of the first lines must write a lockfile and delete it at the end when the results file is emailed to user so inotify could unblock the website as follows:
 
