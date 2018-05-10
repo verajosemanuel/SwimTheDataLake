@@ -16,7 +16,7 @@ Last week I was working on one of such projects, and one of the requirements was
 
 Now, things are getting interesting.
 
-I have to assume the user is not going to have the browser opened for hours, sometimes over a working say or more, depending on the uploaded file amount of rows, so the secondary process firing API calls MUST be isolated from the Flexdashboard process.  I read some vignettes from packages like *future* or *later*, but didn't seem to fill my needs, so I decided to rely on posix commands.
+I have to assume the user is not going to have the browser opened for hours, sometimes over a working day or more, depending on the uploaded file amount of rows, so the secondary process firing API calls MUST be isolated from the Flexdashboard process.  I read some vignettes from packages like *future* or *later*, but didn't seem to fill my needs, so I decided to rely on posix commands.
 
 My first approach was to launch a secondary process using a system call from Flexdashboard R.
 
