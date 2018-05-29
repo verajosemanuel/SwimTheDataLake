@@ -13,7 +13,7 @@ A hidden gem from Rstudio is snippets feature. A well known option in any other 
 
 Doing this is easy. The graphical way is getting to Rstudio Tools > Global Options > Code > Enable Code Snippets (Edit Snippets)
 
-![snippets](/post/2018-05-29-my-favourite-snippets_files/snippets.png)
+![snippets](/images/snippets.png)
 
 You can see is a very simple syntax. Placeholder for cursor and strings that must be inserted preceded by dollar sign and curly braces. (here a succint description https://support.rstudio.com/hc/en-us/articles/204463668-Code-Snippets )
 
