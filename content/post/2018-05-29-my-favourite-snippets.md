@@ -33,7 +33,7 @@ snippet ts
 	"#" ${0} `r paste(date(), "------------------------------\n")`
 ```
 
-And the second one to insert the magrittr pipe I use most (instead the default one)
+The second one to insert the magrittr pipe I use most (instead the default one)
 
 ```r
 snippet mp
