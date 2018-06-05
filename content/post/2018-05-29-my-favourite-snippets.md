@@ -23,7 +23,7 @@ The file way is getting to folder where snippets are saved. I'm sure it depends 
 ~/.R/snippets/r.snippets
 ```
 
-editing the file content to add yours is an easy task. My two favourite are:
+editing the file content to add yours is an easy task. My favourite are:
 
 
 A slightly modified for inserting a title before timestamp:
@@ -38,4 +38,10 @@ And the second one to insert the magrittr pipe I use most (instead the default o
 ```r
 snippet mp
 	${1:object} %<>% ${0}
+```
+And a third, for a similar case, but using different names for e very object:
+
+```r
+snippet p
+     ${1:object} <- ${2:dataset} %>% ${0}
 ```
