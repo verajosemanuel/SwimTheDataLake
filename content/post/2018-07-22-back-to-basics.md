@@ -1,5 +1,5 @@
 ---
-title: Back to Basics
+title: Back to Basics (Emacs + ESS + zsh + byobu)
 author: jvera
 date: '2018-07-22'
 slug: back-to-basics
