@@ -1,7 +1,7 @@
 ---
-title: Back to Basics: emacs + ESS + zsh + byobu
+title: Back to Basics
 author: jvera
-date: '2018-05-29'
+date: '2018-07-22'
 slug: back-to-basics
 categories:
   - tricks
