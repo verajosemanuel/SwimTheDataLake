@@ -1,5 +1,5 @@
 ---
-title: My favourite snippets
+title: Back to Basics: emacs + ESS + zsh + byobu
 author: jvera
 date: '2018-05-29'
 slug: my-favourite-snippets
@@ -9,16 +9,63 @@ tags:
   - Rstudio
 ---
 
-A hidden gem from Rstudio is snippets feature. A well known option in any other editor (Atom, VS Code, Notepad ++....) seems that for R people is not a very used tool. For what I know some developers tend to code a full Add-in for things that can be achieved easily just adding a snippet to your Rstudio configuration.
+I think i'm a little bit "old school" or maybe sometimes you have to use the right tool for the task. Some time ago, i feel more productive staying away from the mouse, so terminals and text editors are my daily working environment.
 
-Doing this is easy. The graphical way is getting to Rstudio Tools > Global Options > Code > Enable Code Snippets (Edit Snippets)
+If you use linux, i'm preaching to the choir, and nearly the same if your work involved Mac OS. Sadly, sometimes you have to work using Windows. Yes, sometimes any other option than windows is "forbidden". Only God knows why.
 
-![snippets](/images/snippets.png)
+You'll be lucky if they let you activate developer mode (on windows 10) and use the Bash shell Canonical delivered inside the latest windows version, but this could be not your case. So, i'm giving you some hints to setup some near to linux environment using Emacs, ESS, Zsh and byobu (tmux wrapper).
 
-You can see is a very simple syntax. Placeholder for cursor and strings that must be inserted preceded by dollar sign and curly braces. (here a succint description https://support.rstudio.com/hc/en-us/articles/204463668-Code-Snippets )
+Main steps are:
 
-The file way is getting to folder where snippets are saved. I'm sure it depends on every system but usually is:
+1- Emacs + Spacemacs (ESS + magit + org mode)
+
+2- Terminal + Zsh + Byobu
+
+Fastest way to get a proper emacs working in no time is using the vigou3 installer, ready to usen in windows (and Mac):
+
+https://vigou3.github.io/emacs-modified-windows/
+
+
+Then, clone spacemacs:
 
 ```r
-~/.R/snippets/r.snippets
+$ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 ```
+just activate your favourite layers (magit, ess, org, csv…) and you're done.
+
+Now the trickier part: getting a proper terminal on windows. Poweshell is a joke, so let's install zsh.
+We're going to use **babun**, built on top of Cygwin, adding a lot of refinements and zsh as default shell.
+
+http://babun.github.io/
+
+Easy to install, but emacs is not running out-of-the-box. You must update the underlying Cygwin. Don't worry, it's an easy task: just execute the *update.bat* file from installed babun folder.
+
+And last, let's install **byobu**, a wrapper for **tmux**, a terminal multiplexer. Babun offers a package manager *"a-la apt-get"* but byobu is not provided this way, so you must install *tmux* and *make* previously.
+
+```r
+$ pact install tmux
+
+$ pact install make
+```
+
+Download most recent byobu version and uncompress. 
+
+https://launchpad.net/byobu/+download
+
+Configure installation directory, and then *make & install*
+
+```r
+$ ./configure --prefix="$HOME/installs/byobu"
+
+$ make
+
+$ make install
+```
+
+Add executable PATH to environment:
+
+```r
+$ export PATH="$HOME/installs/byobu/bin:$PATH"
+```
+
+In Spain we say: "Poor man's happiness is never long lasting one" (poco dura la felicidad en la casa del pobre) and this is the case. Byobu features are not working 100% but this setup can fill your needs almost completely.
