@@ -2,7 +2,7 @@
 title: Back to Basics: emacs + ESS + zsh + byobu
 author: jvera
 date: '2018-05-29'
-slug: my-favourite-snippets
+slug: back-to-basics
 categories:
   - tricks
 tags:
