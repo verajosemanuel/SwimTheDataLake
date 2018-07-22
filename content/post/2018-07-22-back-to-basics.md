@@ -9,7 +9,7 @@ tags:
   - Rstudio
 ---
 
-I think i'm a little bit "old school" or maybe sometimes you have to use the right tool for the task. Some time ago, i feel more productive staying away from the mouse, so terminals and text editors are my daily working environment.
+I think i'm a little bit "old school" or maybe sometimes you have to use the right tool for the task. Some time ago, i discovered I feel more productive staying away from the mouse, so terminals and text editors are my daily working environment from then.
 
 If you use linux, i'm preaching to the choir, and nearly the same if your work involved Mac OS. Sadly, sometimes you have to work using Windows. Yes, sometimes any other option than windows is "forbidden". Only God knows why.
 
@@ -33,7 +33,7 @@ $ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 ```
 just activate your favourite layers (magit, ess, org, csv…) and you're done.
 
-Now the trickier part: getting a proper terminal on windows. Poweshell is a joke, so let's install zsh.
+Now the trickier part: getting a proper terminal on windows. Powershell is a joke, so let's install zsh.
 We're going to use **babun**, built on top of Cygwin, adding a lot of refinements and zsh as default shell.
 
 http://babun.github.io/
