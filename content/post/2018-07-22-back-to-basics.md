@@ -21,12 +21,16 @@ Main steps are:
 
 2- Terminal + Zsh + Byobu
 
-Fastest way to get a proper emacs working in no time is using the vigou3 installer, ready to usen in windows (and Mac):
+Fastest way to get a proper emacs + ESS (emacs speaks statistics) working in no time is using the vigou3 installer, ready to usen in windows (and Mac):
 
 https://vigou3.github.io/emacs-modified-windows/
 
 
-Then, clone spacemacs:
+But as we said, we can not install anything on the machine due to "politics". So let's download latest stable emacs and decompress on our preferred folder. 
+
+http://ftp.rediris.es/mirror/GNU/emacs/
+
+`runemacs.exe` is the executable. Then, clone spacemacs:
 
 ```r
 $ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
