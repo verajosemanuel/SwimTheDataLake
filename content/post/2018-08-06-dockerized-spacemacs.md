@@ -1,7 +1,7 @@
 ---
 title: Dockerized Spacemacs on Windows
 author: jvera
-date: '2018-07-22'
+date: '2018-08-06'
 slug: dockerized-spacemacs
 categories:
   - tricks
