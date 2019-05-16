@@ -19,7 +19,7 @@ library(MESS)
 
 myVector <- c(3, NA, NA, NA, 4, NA, NA, 7, NA, NA)
 
-filled.vector <- filldown(myvector)
+filled.vector <- filldown(myVector)
 ```
 
 and done!
