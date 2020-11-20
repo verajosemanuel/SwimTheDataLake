@@ -1,0 +1,8 @@
+fig:nice-fig
+tab:nice-tab
+QuickIntro
+entorno-renv
+renv-workflow
+pacman
+here
+logs

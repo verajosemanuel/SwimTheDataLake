@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Entorno | Pipeline de Modelos</title>
+  <meta name="description" content="Descripcion de procedimientos y decisiones tomadas para realizar el pipeline de modelos." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Entorno | Pipeline de Modelos" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Descripcion de procedimientos y decisiones tomadas para realizar el pipeline de modelos." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Entorno | Pipeline de Modelos" />
+  
+  <meta name="twitter:description" content="Descripcion de procedimientos y decisiones tomadas para realizar el pipeline de modelos." />
+  
+
+<meta name="author" content="Allianz Direct Data Science Spain" />
+
+
+<meta name="date" content="2020-11-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="QuickIntro.html"/>
+
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Analytics Allianz Direct Spain</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bienvenidos</a></li>
+<li class="chapter" data-level="1" data-path="QuickIntro.html"><a href="QuickIntro.html"><i class="fa fa-check"></i><b>1</b> Breve intro a BookDown</a></li>
+<li class="chapter" data-level="2" data-path="entorno-renv.html"><a href="entorno-renv.html"><i class="fa fa-check"></i><b>2</b> Entorno</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="entorno-renv.html"><a href="entorno-renv.html#renv-workflow"><i class="fa fa-check"></i><b>2.1</b> renv workflow</a></li>
+<li class="chapter" data-level="2.2" data-path="entorno-renv.html"><a href="entorno-renv.html#pacman"><i class="fa fa-check"></i><b>2.2</b> pacman</a></li>
+<li class="chapter" data-level="2.3" data-path="entorno-renv.html"><a href="entorno-renv.html#here"><i class="fa fa-check"></i><b>2.3</b> here</a></li>
+<li class="chapter" data-level="2.4" data-path="entorno-renv.html"><a href="entorno-renv.html#logs"><i class="fa fa-check"></i><b>2.4</b> Logs</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Pipeline de Modelos</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="entorno-renv" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Entorno</h1>
+<p>Para lograr estabilidad en los entornos y ayudar a la escalabilidad y reproducibilidad del código recomendamos una serie de paquetes de reconocido prestigio y amplio uso.</p>
+<ul>
+<li>Para la estabilidad de los entornos <em>{renv}</em></li>
+<li>Para la gestion de paquetería se recomienda <em>{pacman}</em></li>
+<li>Para la fácil localización de rutas de ficheros dentro de proyectis <em>{here}</em></li>
+<li>Para el archivado de logs <em>{futile.logger}</em> y <em>{tidylog}</em></li>
+</ul>
+<p>Pasamos a describir sucintamente cada uno de ellos.</p>
+<div id="renv-workflow" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> renv workflow</h2>
+<p>El paquete es muy sencillo. Su funcionamiento básico consiste en generar una foto fija del estado de los paquetes (versionado) para impedir que las futuras actualizaciones rompan el código que está funcionando. En un estilo a lo que permite Git con el código, pero en este caso con todo el ecosistema de paquetes de R.</p>
+<p>Los pasos para usarlo son muy sencillos:</p>
+<ol style="list-style-type: decimal">
+<li><p>ejecutar <code>renv::init()</code> para inicializar el proyecto. Esto genera una librería privada y exclusiva para el proyecto,</p></li>
+<li><p>Trabajar de manera normal, instalando y eliminando paquetes segun sea necesario.</p></li>
+<li><p>Cuando esté todo funcionando a nuestro gusto, ejecutamos <code>renv::snapshot()</code> para salvar el estado de las librerias en el lockfile (renv.lock),</p></li>
+<li><p>Continuamos trabajando de manera normal, con el habitual trasiego de paquetes instalados y desinstalados.</p></li>
+<li><p>Ejecutamos <code>renv::snapshot()</code> de nuevo para salvar el estado de la librería si todo funciona a nuestro gusto. En caso de que algo falle, solamente hay que llamar a <code>renv::restore()</code> para revertir la librería al estado anterior.</p></li>
+</ol>
+<p>Dejo aqui los enlaces a la <em>documentación</em> del paquete:</p>
+<p><a href="https://rstudio.github.io/renv/articles/renv.html">renv documentation</a></p>
+</div>
+<div id="pacman" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> pacman</h2>
+<p>La carga de paquetes cuando se mueven los scripts de entorno, conlleva una adecuada gestión de los mismos. Colaborando con {renv} podemos facilitar mucho el uso y la colaboración si incluimos {pacman} al inicio de cada script de este modo:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="entorno-renv.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(devtools)) {</span>
+<span id="cb4-2"><a href="entorno-renv.html#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>, <span class="at">repos =</span> <span class="st">&quot;http://cran.rstudio.com/&quot;</span>)</span>
+<span id="cb4-3"><a href="entorno-renv.html#cb4-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-4"><a href="entorno-renv.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(pacman)) {</span>
+<span id="cb4-5"><a href="entorno-renv.html#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;pacman&quot;</span>, <span class="at">repos =</span> <span class="st">&quot;http://cran.rstudio.com/&quot;</span>)</span>
+<span id="cb4-6"><a href="entorno-renv.html#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-7"><a href="entorno-renv.html#cb4-7" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse,</span>
+<span id="cb4-8"><a href="entorno-renv.html#cb4-8" aria-hidden="true" tabindex="-1"></a>               rio,</span>
+<span id="cb4-9"><a href="entorno-renv.html#cb4-9" aria-hidden="true" tabindex="-1"></a>               skimr,</span>
+<span id="cb4-10"><a href="entorno-renv.html#cb4-10" aria-hidden="true" tabindex="-1"></a>               stringr,</span>
+<span id="cb4-11"><a href="entorno-renv.html#cb4-11" aria-hidden="true" tabindex="-1"></a>               summarytools,</span>
+<span id="cb4-12"><a href="entorno-renv.html#cb4-12" aria-hidden="true" tabindex="-1"></a>               tibble,</span>
+<span id="cb4-13"><a href="entorno-renv.html#cb4-13" aria-hidden="true" tabindex="-1"></a>               tidylog,</span>
+<span id="cb4-14"><a href="entorno-renv.html#cb4-14" aria-hidden="true" tabindex="-1"></a>               reactable,</span>
+<span id="cb4-15"><a href="entorno-renv.html#cb4-15" aria-hidden="true" tabindex="-1"></a>               futile.logger)</span></code></pre></div>
+<p>pacman comprueba si el paquete está presente en la librería, y lo carga en memoria. Al mismo tiempo, si el paquete no existe, lo instala de manera automática.</p>
+<p>Además tiene muchas otras funciones para gestionar nuestra librería.</p>
+<p>Documentación de Pacman
+<a href="http://trinker.github.io/pacman/vignettes/Introduction_to_pacman.html" class="uri">http://trinker.github.io/pacman/vignettes/Introduction_to_pacman.html</a></p>
+</div>
+<div id="here" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> here</h2>
+<p>Siempre es una locura estar localizando ficheros de entrada o de salida en nuestro código. {here} facilita nuestra tarea convirtiéndose en un gestor de ficheros tomando como raiz el proyecto en el que estemos trabajando, permitiendonos gestionar de manera transparente los diferentes <code>paths</code> utilizados.</p>
+<p>Por ejemplo, aqui definimos el fichero de entrada de datos sin preocuparnos de dónde se encuentre dentro de nuestro proyecto. No hace falta hacer el consabido <code>setwd()</code> que puede además traer problemas y está desaconsejado.</p>
+<p>Definición de la ruta a un fichero:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="entorno-renv.html#cb5-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(here)</span>
+<span id="cb5-2"><a href="entorno-renv.html#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="entorno-renv.html#cb5-3" aria-hidden="true" tabindex="-1"></a>ruta_entrada <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&#39;data.csv&#39;</span>)</span></code></pre></div>
+<p>Definición de ruta a un directorio y lectura de un fichero:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="entorno-renv.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">here</span>(<span class="st">&quot;one&quot;</span>, <span class="st">&quot;two&quot;</span>, <span class="st">&quot;awesome.txt&quot;</span>)</span>
+<span id="cb6-2"><a href="entorno-renv.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;/Users/jvera/proyectos/one/two/awesome.txt&quot;</span></span>
+<span id="cb6-3"><a href="entorno-renv.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb6-4"><a href="entorno-renv.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">readLines</span>(<span class="fu">here</span>(<span class="st">&quot;one&quot;</span>, <span class="st">&quot;two&quot;</span>, <span class="st">&quot;awesome.txt&quot;</span>)))</span>
+<span id="cb6-5"><a href="entorno-renv.html#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; hola chicos que tal?!</span></span></code></pre></div>
+<p>Documentación del paquete {here}</p>
+<p><a href="https://here.r-lib.org/" class="uri">https://here.r-lib.org/</a></p>
+</div>
+<div id="logs" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Logs</h2>
+<p>Para el seguimiento de las operaciones, tanto en el momento del desarrollo como en las investigaciones posteriores, es muy útil contar con el concurso de los logs a disco.
+Tener un log nos permite siempre ver en tiempo real cómo está funcionando la aplicación y además guardar constancia de las anteriores ejecuciones en caso de problemas.</p>
+<p>Para ello podemos utilizar 2 paquetes ampliamente usados para estos menesteres:</p>
+<p>{futile.logger} y {tidylog}</p>
+<p>Con este simple snippet de código tendremos siempre volcadas a disco todas las operaciones. De manera automática en el caso de {tidylog} y de manera manual a nuestra discrección en el caso de {futile.logger}</p>
+<p>La única precaución a tomar es que {tidylog} debe ser siempre el último paquete cargado.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="entorno-renv.html#cb7-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(here, tidyverse, futile.logger, tidylog)</span>
+<span id="cb7-2"><a href="entorno-renv.html#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="entorno-renv.html#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="entorno-renv.html#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># definimos la ruta al log dentro de nuestro proyecto</span></span>
+<span id="cb7-5"><a href="entorno-renv.html#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb7-6"><a href="entorno-renv.html#cb7-6" aria-hidden="true" tabindex="-1"></a>ruta_log <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&#39;nombre-proyecto.log&#39;</span>)</span>
+<span id="cb7-7"><a href="entorno-renv.html#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="entorno-renv.html#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="entorno-renv.html#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># si el fichero no existe, lo crea</span></span>
+<span id="cb7-10"><a href="entorno-renv.html#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb7-11"><a href="entorno-renv.html#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(ruta_log)) {</span>
+<span id="cb7-12"><a href="entorno-renv.html#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.create</span>(ruta_log)</span>
+<span id="cb7-13"><a href="entorno-renv.html#cb7-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-14"><a href="entorno-renv.html#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="entorno-renv.html#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="entorno-renv.html#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Creamos una instancia del gestor del log</span></span>
+<span id="cb7-17"><a href="entorno-renv.html#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb7-18"><a href="entorno-renv.html#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="fu">invisible</span>(futile.logger<span class="sc">::</span><span class="fu">flog.appender</span>(<span class="fu">appender.file</span>(ruta_log)))</span>
+<span id="cb7-19"><a href="entorno-renv.html#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="entorno-renv.html#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="entorno-renv.html#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co"># asignamos a la función de error una salida que vuelque al log los errores</span></span>
+<span id="cb7-22"><a href="entorno-renv.html#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb7-23"><a href="entorno-renv.html#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">error =</span> <span class="cf">function</span>() { <span class="fu">flog.error</span>(<span class="fu">geterrmessage</span>()) ; <span class="fu">traceback</span>() ; <span class="fu">stop</span>() })</span>
+<span id="cb7-24"><a href="entorno-renv.html#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="entorno-renv.html#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="co"># asignamos el volcado de los procesos automaticos al fichero en disco</span></span>
+<span id="cb7-26"><a href="entorno-renv.html#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb7-27"><a href="entorno-renv.html#cb7-27" aria-hidden="true" tabindex="-1"></a>tidylog_to_file <span class="ot">&lt;-</span> <span class="cf">function</span>(text) <span class="fu">flog.info</span>(text)</span>
+<span id="cb7-28"><a href="entorno-renv.html#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="st">&quot;tidylog.display&quot;</span> <span class="ot">=</span> <span class="fu">list</span>(message, tidylog_to_file))</span>
+<span id="cb7-29"><a href="entorno-renv.html#cb7-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-30"><a href="entorno-renv.html#cb7-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-31"><a href="entorno-renv.html#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="co"># ejemplo de volcado personalizado al log</span></span>
+<span id="cb7-32"><a href="entorno-renv.html#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb7-33"><a href="entorno-renv.html#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="fu">flog.info</span>(<span class="st">&quot;################## PROGRAM STARTED ########################&quot;</span>)</span>
+<span id="cb7-34"><a href="entorno-renv.html#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="fu">flog.info</span>(<span class="fu">Sys.time</span>())</span>
+<span id="cb7-35"><a href="entorno-renv.html#cb7-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-36"><a href="entorno-renv.html#cb7-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-37"><a href="entorno-renv.html#cb7-37" aria-hidden="true" tabindex="-1"></a><span class="co"># el resto de operaciones de dplyr se van volcando de manera automatica al log.</span></span></code></pre></div>
+<p>Disponemos de diferents appenders con diferentes niveles de criticidad según queramos dar más o menos énfasis:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="entorno-renv.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">flog.info</span>(<span class="st">&quot;esto es un mensaje informativo &quot;</span>)</span>
+<span id="cb8-2"><a href="entorno-renv.html#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="entorno-renv.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">flog.error</span>(<span class="st">&quot;Esto es un error&quot;</span>)</span>
+<span id="cb8-4"><a href="entorno-renv.html#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="entorno-renv.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">flog.warn</span>(<span class="st">&quot;esto es una alerta&quot;</span>)</span></code></pre></div>
+<p>Documentacion de los dos paquetes</p>
+<p>tidylog
+<a href="https://github.com/elbersb/tidylog" class="uri">https://github.com/elbersb/tidylog</a></p>
+<p>futile.logger
+<a href="https://cartesianfaith.com/2013/03/10/better-logging-in-r-aka-futile-logger-1-3-0-released/" class="uri">https://cartesianfaith.com/2013/03/10/better-logging-in-r-aka-futile-logger-1-3-0-released/</a></p>
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-xie2015" class="csl-entry">
+Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.org/knitr/">http://yihui.org/knitr/</a>.
+</div>
+<div id="ref-R-bookdown" class="csl-entry">
+———. 2020. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://github.com/rstudio/bookdown">https://github.com/rstudio/bookdown</a>.
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="QuickIntro.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Pipeline_Models_Bookdown.pdf", "Pipeline_Models_Bookdown.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

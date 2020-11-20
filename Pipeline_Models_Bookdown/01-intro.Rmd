@@ -1,0 +1,185 @@
+# Entorno {#entorno-renv}
+
+Para lograr estabilidad en los entornos y ayudar a la escalabilidad y reproducibilidad del código recomendamos una serie de paquetes de reconocido prestigio y amplio uso.
+
+- Para la estabilidad de los entornos  *{renv}*
+- Para la gestion de paquetería se recomienda *{pacman}*
+- Para la fácil localización de rutas de ficheros dentro de proyectis *{here}*
+- Para el archivado de logs *{futile.logger}* y *{tidylog}*
+
+Pasamos a describir sucintamente cada uno de ellos.
+
+renv workflow
+--------------
+
+El paquete es muy sencillo. Su funcionamiento básico consiste en generar una foto fija del estado de los paquetes (versionado) para impedir que las futuras actualizaciones rompan el código que está funcionando. En un estilo a lo que permite Git con el código, pero en este caso con todo el ecosistema de paquetes de R.
+
+Los pasos para usarlo son muy sencillos:
+
+1.  ejecutar `renv::init()` para inicializar el proyecto. Esto genera una librería privada y exclusiva para el proyecto,
+
+2.  Trabajar de manera normal, instalando y eliminando paquetes segun sea necesario.
+
+3.  Cuando esté todo funcionando a nuestro gusto, ejecutamos `renv::snapshot()` para salvar el estado de las librerias en el lockfile (renv.lock),
+
+4.  Continuamos trabajando de manera normal, con el habitual trasiego de paquetes instalados y desinstalados.
+
+5.  Ejecutamos `renv::snapshot()` de nuevo para salvar el estado de la librería si todo funciona a nuestro gusto. En caso de que algo falle, solamente hay que llamar a `renv::restore()` para revertir la librería al estado anterior.
+
+
+
+Dejo aqui los enlaces a la *documentación* del paquete:
+
+[renv documentation](https://rstudio.github.io/renv/articles/renv.html)
+
+
+pacman
+----------------
+
+La carga de paquetes cuando se mueven los scripts de entorno, conlleva una adecuada gestión de los mismos. Colaborando con {renv} podemos facilitar mucho el uso y la colaboración si incluimos {pacman} al inicio de cada script de este modo:
+
+```{r, eval=FALSE}
+
+if (!require(devtools)) {
+  install.packages("devtools", repos = "http://cran.rstudio.com/")
+}
+if (!require(pacman)) {
+  install.packages("pacman", repos = "http://cran.rstudio.com/")
+}
+pacman::p_load(tidyverse,
+               rio,
+               skimr,
+               stringr,
+               summarytools,
+               tibble,
+               tidylog,
+               reactable,
+               futile.logger)
+
+
+```
+
+pacman comprueba si el paquete está presente en la librería, y lo carga en memoria. Al mismo tiempo, si el paquete no existe, lo instala de manera automática.
+
+Además tiene muchas otras funciones para gestionar nuestra librería.
+
+Documentación de Pacman
+http://trinker.github.io/pacman/vignettes/Introduction_to_pacman.html
+
+
+here
+---------------
+
+Siempre es una locura estar localizando ficheros de entrada o de salida en nuestro código. {here} facilita nuestra tarea convirtiéndose en un gestor de ficheros tomando como raiz el proyecto en el que estemos trabajando, permitiendonos gestionar de manera transparente los diferentes `paths` utilizados.
+
+Por ejemplo, aqui definimos el fichero de entrada de datos sin preocuparnos de dónde se encuentre dentro de nuestro proyecto. No hace falta hacer el consabido `setwd()` que puede además traer problemas y está desaconsejado.
+
+Definición de la ruta a un fichero:
+
+```{r, eval=FALSE}
+
+pacman::p_load(here)
+
+ruta_entrada <- here::here('data.csv')
+
+
+```
+
+Definición de ruta a un directorio y lectura de un fichero:
+
+```{r, eval=FALSE}
+
+here("one", "two", "awesome.txt")
+#> [1] "/Users/jvera/proyectos/one/two/awesome.txt"
+#
+cat(readLines(here("one", "two", "awesome.txt")))
+#> hola chicos que tal?!
+
+
+```
+
+Documentación del paquete {here}
+
+https://here.r-lib.org/
+
+
+Logs
+---------------
+
+Para el seguimiento de las operaciones, tanto en el momento del desarrollo como en las investigaciones posteriores, es muy útil contar con el concurso de los logs a disco. 
+Tener un log nos permite siempre ver en tiempo real cómo está funcionando la aplicación y además guardar constancia de las anteriores ejecuciones en caso de problemas.
+
+Para ello podemos utilizar 2 paquetes ampliamente usados para estos menesteres:
+
+{futile.logger} y {tidylog}
+
+Con este simple snippet de código tendremos siempre volcadas a disco todas las operaciones. De manera automática en el caso de {tidylog} y de manera manual a nuestra discrección en el caso de {futile.logger}
+
+La única precaución a tomar es que {tidylog} debe ser siempre el último paquete cargado.
+
+```{r, eval=FALSE}
+
+pacman::p_load(here, tidyverse, futile.logger, tidylog)
+
+
+# definimos la ruta al log dentro de nuestro proyecto
+# 
+ruta_log <- here::here('nombre-proyecto.log')
+
+
+# si el fichero no existe, lo crea
+# 
+if (!file.exists(ruta_log)) {
+  file.create(ruta_log)
+}
+
+
+# Creamos una instancia del gestor del log
+# 
+invisible(futile.logger::flog.appender(appender.file(ruta_log)))
+
+
+# asignamos a la función de error una salida que vuelque al log los errores
+# 
+options(error = function() { flog.error(geterrmessage()) ; traceback() ; stop() })
+
+# asignamos el volcado de los procesos automaticos al fichero en disco
+# 
+tidylog_to_file <- function(text) flog.info(text)
+options("tidylog.display" = list(message, tidylog_to_file))
+
+
+# ejemplo de volcado personalizado al log
+# 
+flog.info("################## PROGRAM STARTED ########################")
+flog.info(Sys.time())
+
+
+# el resto de operaciones de dplyr se van volcando de manera automatica al log.
+
+
+```
+
+Disponemos de diferents appenders con diferentes niveles de criticidad según queramos dar más o menos énfasis:
+
+
+```{r, eval=FALSE}
+
+flog.info("esto es un mensaje informativo ")
+
+flog.error("Esto es un error")
+
+flog.warn("esto es una alerta")
+
+```
+
+
+Documentacion de los dos paquetes
+
+tidylog
+https://github.com/elbersb/tidylog
+
+
+futile.logger
+https://cartesianfaith.com/2013/03/10/better-logging-in-r-aka-futile-logger-1-3-0-released/
+

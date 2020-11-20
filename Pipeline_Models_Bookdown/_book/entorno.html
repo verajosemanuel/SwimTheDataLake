@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Entorno | Pipeline de Modelos</title>
+  <meta name="description" content="Descripcion de procedimientos y decisiones tomadas para realizar el pipeline de modelos." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Entorno | Pipeline de Modelos" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Descripcion de procedimientos y decisiones tomadas para realizar el pipeline de modelos." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Entorno | Pipeline de Modelos" />
+  
+  <meta name="twitter:description" content="Descripcion de procedimientos y decisiones tomadas para realizar el pipeline de modelos." />
+  
+
+<meta name="author" content="Allianz Direct Data Science Spain" />
+
+
+<meta name="date" content="2020-11-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Analytics Allianz Direct Spain</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Bienvenidos</a></li>
+<li class="chapter" data-level="1" data-path="entorno.html"><a href="entorno.html"><i class="fa fa-check"></i><b>1</b> Entorno</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="entorno.html"><a href="entorno.html#renv-workflow"><i class="fa fa-check"></i><b>1.1</b> ## renv workflow</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Pipeline de Modelos</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="entorno" class="section level1" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Entorno</h1>
+<p>Para la estabilidad de los entornos usaremos <em>{renv}</em></p>
+<p>El paquete es muy sencillo. Su funcionamiento básico consiste en generar una foto fija del estado de los paquetes (versionado) para impedir que las futuras actualizaciones rompan el código que está funcionando. En un estilo a lo que permite Git con el código, pero en este caso con todo el ecosistema de paquetes de R.</p>
+<div id="renv-workflow" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> ## renv workflow</h2>
+<p>Los pasos para usarlo son muy sencillos:</p>
+<ol style="list-style-type: decimal">
+<li><p>ejecutar <code>renv::init()</code> para inicializar el proyecto. Esto genera una librería privada y exclusiva para el proyecto,</p></li>
+<li><p>Trabajar de manera normal, instalando y eliminando paquetes segun sea necesario.</p></li>
+<li><p>Cuando esté todo funcionando a nuestro gusto, ejecutamos <code>renv::snapshot()</code> para salvar el estado de las librerias en el lockfile (renv.lock),</p></li>
+<li><p>Continuamos trabajando de manera normal, con el habitual trasiego de paquetes instalados y desinstalados.</p></li>
+<li><p>Ejecutamos <code>renv::snapshot()</code> de nuevo para salvar el estado de la librería si todo funciona a nuestro gusto. En caso de que algo falle, solamente hay que llamar a <code>renv::restore()</code> para revertir la librería al estado anterior.</p></li>
+</ol>
+<hr />
+<p>Dejo aqui los enlaces a la documentación del paquete:</p>
+<p><a href="https://rstudio.github.io/renv/articles/renv.html">renv documentation</a></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Pipeline_Models_Bookdown.pdf", "Pipeline_Models_Bookdown.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
